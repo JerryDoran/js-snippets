@@ -7,7 +7,7 @@ const person = {
 // De-structure the object and put the values of each object property into variables
 let { name, age, gender = 'unknown' } = person;
 
-// Default property value will get overwritten if a value is assined to the property
+// Default property value will get overwritten if a value is assigned to the property
 // in the person object.
 console.log(`My name is ${name}, I am ${gender} and I am ${age} years old`);
 
@@ -32,3 +32,8 @@ function bottle() {
 let [val1, val2] = bottle();
 
 console.log(val1, val2);
+
+let grade = 40;
+
+const result = grade > 80 ? 'Distinction' : grade > 50 ? 'Pass' : 'Fail';
+console.log(result);
