@@ -4,11 +4,11 @@ let numbers = [1, 2, 3, 4, 5];
 // on the original array and map the calculated values to the new array.
 let newNumbers = numbers.map(num => num * 2);
 
-console.log(newNumbers);
+// console.log(newNumbers);
 
 // Reduce - can reduce an array of values down to a single value
 let total = numbers.reduce((acc, num) => acc + num);
-console.log(total);
+// console.log(total);
 
 // Filter - Remove elements from an array if it does not meet a requirement that
 // you specify
@@ -18,10 +18,10 @@ console.log(total);
 // });
 
 let evenNumbers = numbers.filter(n => n % 2 === 0);
-console.log(evenNumbers);
+// console.log(evenNumbers);
 
 let oddNumbers = numbers.filter(n => n % 2 !== 0);
-console.log(oddNumbers);
+// console.log(oddNumbers);
 
 // Object Destructuring
 const person = {
@@ -30,11 +30,11 @@ const person = {
 };
 
 let { name, age } = person;
-console.log(name);
-console.log(age);
+// console.log(name);
+// console.log(age);
 
 function printDetails({ name, age }) {
-  console.log(`The name is ${name} and they are ${age}`);
+  // console.log(`The name is ${name} and they are ${age}`);
 }
 
 printDetails(person);
@@ -55,31 +55,31 @@ const capitalizedWords = str => {
     .join(' ');
 };
 
-console.log(capitalizedSentence);
+// console.log(capitalizedSentence);
 
 sentence = 'i love to be a javascript developer';
 
-console.log(capitalizedString(sentence));
+// console.log(capitalizedString(sentence));
 
 // Capitalize every word
-console.log(capitalizedWords(sentence));
+// console.log(capitalizedWords(sentence));
 
 // Copy an array using slice method for older browsers
 const array1 = [1, 2, 3, 4, 5];
 
 const copyofArray1 = array1.slice();
-console.log(array1);
-console.log(copyofArray1);
+// console.log(array1);
+// console.log(copyofArray1);
 
 // Copy an array using spread operator ES6
 const anotherCopyOfArray1 = [...array1];
-console.log(anotherCopyOfArray1);
+// console.log(anotherCopyOfArray1);
 
 // Remove item(s) from an array
 const moreNumbers = [1, 2, 3, 4, 5, 6, 8, 6, 75, 12, 16, 4, 2, 17];
 
 // Find largest number in array
-console.log(Math.max(...moreNumbers));
+// console.log(Math.max(...moreNumbers));
 
 // Create function for finding largest number in array
 const largestNumber = values => {
@@ -92,10 +92,10 @@ const largestNumber = values => {
   return highest;
 };
 
-console.log(largestNumber(moreNumbers));
+// console.log(largestNumber(moreNumbers));
 
 // Removes the last element of the array
-console.log(moreNumbers);
+// console.log(moreNumbers);
 // const a = moreNumbers.pop();
 // const b = moreNumbers.pop();
 // console.log(moreNumbers);
@@ -118,36 +118,93 @@ console.log(moreNumbers);
 const newArray = moreNumbers.filter(
   (number, pos) => moreNumbers.indexOf(number) === pos
 );
-console.log(newArray);
+// console.log(newArray);
 
 // Join method to merge array values
 const words = ['The', 'quick', 'brown', 'fox'];
 
-console.log(words.join(' '));
+// console.log(words.join(' '));
 
 // Split a string into an array of elements
 str1 = 'the quick brown fox jumped';
 
-console.log(str1.split(' '));
+// console.log(str1.split(' '));
 
-console.log(str1.length);
+// console.log(str1.length);
 
 // Reverse a string - need to convert it to an array first
 const newString = str1
   .split('')
   .reverse()
   .join('');
-console.log(str1);
-console.log(newString);
+// console.log(str1);
+// console.log(newString);
 
 // Using a for loop
 let newStr = '';
 for (let i = str1.length - 1; i >= 0; i--) {
   newStr += str1[i];
 }
-console.log(newStr);
+// console.log(newStr);
 
 // Find the longest word in a string
 const strArr = str1.split(' ');
 const sortedStringArr = strArr.sort((strA, strB) => strB.length - strA.length);
-console.log(sortedStringArr[0]);
+// console.log(sortedStringArr[0]);
+
+// Find the number of even digits in an array of integers
+// const countEvenNumbers = arr => {
+//   return arr.filter(num => num % 2 === 0).length;
+// };
+
+// console.log(countEvenNumbers([1, 2, 3, 4, 5, 6]));
+// console.log(countEvenNumbers([2, 2, 2, 4, 2, 6]));
+// console.log(countEvenNumbers([3, 5, 7, 4, 5, 6]));
+
+// Find the number of even values up to a given number
+// const countEvenNumbers = arr => {
+//   return arr.filter(num => num % 2 === 0).length;
+// };
+
+// const createArrayOfNumbers = num => {
+//   const returnArray = [];
+//   for (let i = 1; i < num; i += 1) {
+//     returnArray.push(i);
+//   }
+//   return returnArray;
+// };
+
+// console.log(countEvenNumbers(createArrayOfNumbers(6)));
+// console.log(countEvenNumbers(createArrayOfNumbers(9)));
+
+// Check whether a given array of integers is sorted in ascending order
+// const isAscending = arr => {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i + 1] < arr[i]) return false;
+//   }
+//   return true;
+// };
+
+// console.log(isAscending([1, 2, 3, 4, 5, 6]));
+// console.log(isAscending([1, 2, 5, 4, 2, 6]));
+// console.log(isAscending([1, 2, 3, 4, 5, 5]));
+
+// Find the largest even number from an array of integers
+// const findLargestEvenNumber = arr => {
+//   return Math.max(...arr.filter(num => num % 2 === 0));
+// };
+
+// console.log(findLargestEvenNumber([2, 3, 4, 67, 89, 60]));
+// console.log(findLargestEvenNumber([2, 3, 4, 6, 9, 61]));
+// console.log(findLargestEvenNumber([2, 3, 1, 67, 90, 65]));
+
+// Replace the first digit in a string with $ character
+// const replaceFirstDigit = str => str.replace(/[0-9]/, '$');
+const replaceFirstDigit = str => str.replace(/\d/, '$');
+
+// Passing in the global flag 'g' will replace all numbers in a string with $
+// const replaceFirstDigit = str => str.replace(/[0-9]/g, '$');
+
+// console.log(replaceFirstDigit('Abcd1'));
+// console.log(replaceFirstDigit('Abc789efkgj'));
+// console.log(replaceFirstDigit('Abcd5ytl23'));
