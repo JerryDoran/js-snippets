@@ -2,7 +2,7 @@ let numbers = [1, 2, 3, 4, 5];
 
 // Map -  maps the values of one array to a new array.  Can perform calculations
 // on the original array and map the calculated values to the new array.
-let newNumbers = numbers.map(num => num * 2);
+let newNumbers = numbers.map((num) => num * 2);
 
 // console.log(newNumbers);
 
@@ -17,16 +17,16 @@ let total = numbers.reduce((acc, num) => acc + num);
 //   return n % 2 === 0;
 // });
 
-let evenNumbers = numbers.filter(n => n % 2 === 0);
+let evenNumbers = numbers.filter((n) => n % 2 === 0);
 // console.log(evenNumbers);
 
-let oddNumbers = numbers.filter(n => n % 2 !== 0);
+let oddNumbers = numbers.filter((n) => n % 2 !== 0);
 // console.log(oddNumbers);
 
 // Object Destructuring
 const person = {
   name: 'Steve',
-  age: 50
+  age: 50,
 };
 
 let { name, age } = person;
@@ -44,15 +44,12 @@ let sentence = 'the quick brown fox jumped over the lazy dog';
 let capitalizedSentence = sentence[0].toUpperCase() + sentence.slice(1);
 
 // Make a function to capitalize the fist letter of a string
-const capitalizedString = str => {
+const capitalizedString = (str) => {
   return str[0].toUpperCase() + str.slice(1);
 };
 
-const capitalizedWords = str => {
-  return str
-    .split(' ')
-    .map(capitalizedString)
-    .join(' ');
+const capitalizedWords = (str) => {
+  return str.split(' ').map(capitalizedString).join(' ');
 };
 
 // console.log(capitalizedSentence);
@@ -82,7 +79,7 @@ const moreNumbers = [1, 2, 3, 4, 5, 6, 8, 6, 75, 12, 16, 4, 2, 17];
 // console.log(Math.max(...moreNumbers));
 
 // Create function for finding largest number in array
-const largestNumber = values => {
+const largestNumber = (values) => {
   let highest = 0;
   for (let i = 0; i < values.length; i++) {
     if (values[i] > highest) {
@@ -133,10 +130,7 @@ str1 = 'the quick brown fox jumped';
 // console.log(str1.length);
 
 // Reverse a string - need to convert it to an array first
-const newString = str1
-  .split('')
-  .reverse()
-  .join('');
+const newString = str1.split('').reverse().join('');
 // console.log(str1);
 // console.log(newString);
 
@@ -200,11 +194,22 @@ const sortedStringArr = strArr.sort((strA, strB) => strB.length - strA.length);
 
 // Replace the first digit in a string with $ character
 // const replaceFirstDigit = str => str.replace(/[0-9]/, '$');
-const replaceFirstDigit = str => str.replace(/\d/, '$');
+const replaceFirstDigit = (str) => str.replace(/\d/, '$');
 
 // Passing in the global flag 'g' will replace all numbers in a string with $
 // const replaceFirstDigit = str => str.replace(/[0-9]/g, '$');
 
-// console.log(replaceFirstDigit('Abcd1'));
+console.log(replaceFirstDigit('Abcd1'));
 // console.log(replaceFirstDigit('Abc789efkgj'));
 // console.log(replaceFirstDigit('Abcd5ytl23'));
+
+// Given a year, report if it is a leap year
+const isLeapYear = (year) => year % 4 === 0;
+
+console.log(isLeapYear(2014));
+console.log(isLeapYear(2015));
+console.log(isLeapYear(2016));
+console.log(isLeapYear(2017));
+console.log(isLeapYear(2018));
+console.log(isLeapYear(2019));
+console.log(isLeapYear(2020));
