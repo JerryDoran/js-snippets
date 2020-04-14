@@ -199,17 +199,71 @@ const replaceFirstDigit = (str) => str.replace(/\d/, '$');
 // Passing in the global flag 'g' will replace all numbers in a string with $
 // const replaceFirstDigit = str => str.replace(/[0-9]/g, '$');
 
-console.log(replaceFirstDigit('Abcd1'));
+// console.log(replaceFirstDigit('Abcd1'));
 // console.log(replaceFirstDigit('Abc789efkgj'));
 // console.log(replaceFirstDigit('Abcd5ytl23'));
 
 // Given a year, report if it is a leap year
 const isLeapYear = (year) => year % 4 === 0;
 
-console.log(isLeapYear(2014));
-console.log(isLeapYear(2015));
-console.log(isLeapYear(2016));
-console.log(isLeapYear(2017));
-console.log(isLeapYear(2018));
-console.log(isLeapYear(2019));
-console.log(isLeapYear(2020));
+// console.log(isLeapYear(2014));
+// console.log(isLeapYear(2015));
+// console.log(isLeapYear(2016));
+// console.log(isLeapYear(2017));
+// console.log(isLeapYear(2018));
+// console.log(isLeapYear(2019));
+// console.log(isLeapYear(2020));
+
+// Compare two objects to determine if the first one contains the same properties as
+// the second object.
+const objectA = { a: 1, b: 2, c: 1 };
+const objectB = { a: 1, b: 1, c: 1 };
+const objectC = { a: 1, b: 1, d: 1 };
+
+const compareObjects = (obj1, obj2) => {
+  // Return array of keys)properties) for each object
+  // console.log(Object.keys(obj1));
+  // console.log(Object.keys(obj2));
+
+  // Get true/false values from comparing every key in array.
+  return Object.keys(obj1).every((key) => obj2[key]);
+};
+
+// console.log(compareObjects(objectA, objectB));
+// console.log(compareObjects(objectA, objectC));
+// console.log(compareObjects(objectB, objectC));
+
+// Convert comma separated values(CSV) string into a 2D array.
+// Example:
+// abc, def, ghi
+// jkl, mno, pqr
+// stu, vwx, yza
+
+const parseCSV = (csvString) => {
+  // Split string into 3 rows by separating it on the new line character
+  return csvString.split('\n').map((row) => row.split(','));
+};
+
+const str = `abc,def,ghi
+jkl,mno,pqr
+stu,vxw,yza`;
+
+// console.log(parseCSV(str));
+
+// Return a passed string with the letters in alphabetical order
+
+const alphabeticalOrder = (str) =>
+  str
+    .split('')
+    .sort((a, b) => (a > b ? 1 : -1))
+    .join('');
+
+// console.log(alphabeticalOrder('webmaster'));
+// console.log(alphabeticalOrder('javascript'));
+
+// Count number of vowels within a string a,e,i,o,u
+const findVowels = (str, letters = ['a', 'e', 'i', 'o', 'u']) =>
+  str.split('').filter((s) => letters.indexOf(s) > -1).length;
+
+console.log(findVowels('abcdef'));
+console.log(findVowels('abcdef', ['b', 'c', 'f']));
