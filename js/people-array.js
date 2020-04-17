@@ -130,4 +130,4 @@ const peopleInEachDepartment = (arr) =>
     }),
     {}
   );
-console.log(peopleInEachDepartment(people));
+// console.log(peopleInEachDepartment(people));
